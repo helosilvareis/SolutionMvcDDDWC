@@ -1,4 +1,5 @@
 ﻿using Context;
+using Repository.General;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Repository.General
 {
-    public class RDefault<TEntity> where TEntity : class
+    public class RDefault<TEntity> where TEntity : class, IRDefault<TEntity>
     {
         protected SolutionContext _db;
 

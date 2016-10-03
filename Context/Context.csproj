@@ -58,6 +58,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Infra\Infra.csproj">
+      <Project>{BD6E9ECD-4207-4F7E-98F3-93805954D139}</Project>
+      <Name>Infra</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{7FE16FD4-940B-49E1-95A5-C1425C6F80E8}</Project>
       <Name>Model</Name>

@@ -6,6 +6,7 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WcWebUi.Infra.Model;
 
 namespace Context
 {
@@ -14,7 +15,7 @@ namespace Context
         public SolutionContext() : base("WorkingCode")
         {
 
-        }
+        }       
 
         public DbSet<User> Users { get; set; }
         public DbSet<Group> Groups { get; set; }
@@ -22,7 +23,7 @@ namespace Context
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<SolutionContext, Context.Migrations.Configuration>("WorkingCode"));
-
+            
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
             modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
