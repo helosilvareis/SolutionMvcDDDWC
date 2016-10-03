@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Repository.General
 {
-    public class RDefault<TEntity> where TEntity : class, IRDefault<TEntity>
+    public class RDefault<TEntity> where TEntity : class
     {
         protected SolutionContext _db;
 
