@@ -10,8 +10,8 @@ namespace Model.General
     public class BaseModel
     {
         [ScaffoldColumn(false)]
-        public DateTime CreteDate { get; set; } = DateTime.Now;
+        public DateTime CreateDate { get; set; } = DateTime.Now;
         [ScaffoldColumn(false)]
-        public DateTime ModifieldDate { get; set; } = DateTime.Now;
+        public DateTime ModifiedDate { get; set; } = DateTime.Now;
     }
 }

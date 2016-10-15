@@ -1,22 +1,20 @@
 ﻿using Context;
-using Repository.General;
 using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Repository.General
 {
-    public class RDefault<TEntity> where TEntity : class
+    public class RDefault<TEntity> : IRDefault<TEntity> where TEntity : class
     {
         protected SolutionContext _db;
+        protected readonly IDbSet<TEntity> _dbSet;
 
-        public RDefault(SolutionContext db)
+        public RDefault(SolutionContext context)
         {
-            _db = db;
+            this._db = context;
+            this._dbSet = context.Set<TEntity>();
         }
 
         public SolutionContext context;
